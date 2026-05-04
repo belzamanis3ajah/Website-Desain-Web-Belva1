@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toko Belza - Mainan Anak</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Toko Mainan Belza</h1>
+<p>Mainan Anak Berkualitas & Edukatif</p>
+</header>
+
+<nav>
+<a onclick="showSection('home')">Home</a>
+<a onclick="showSection('produk')">Produk</a>
+<a onclick="showSection('tentang')">Tentang</a>
+<a onclick="showSection('kontak')">Kontak</a>
+<a onclick="showSection('pesan')">Keranjang 🛒 <span id="cartCount">0</span></a>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+<h2>Produk Favorit</h2>
+
+<div class="produk-item">
+<img src="Robot mainan.png">
+<div>
+<h3>Robot Mainan</h3>
+<p>Rp 170.000</p>
+<button onclick="tambahKeranjang('Robot Mainan')">➕ Tambahkan</button>
+</div>
+</div>
+
+<div class="produk-item">
+<img src="Lego anak.png">
+<div>
+<h3>Lego Anak</h3>
+<p>Rp 55.000</p>
+<button onclick="tambahKeranjang('Lego Anak')">➕ Tambahkan</button>
+</div>
+</div>
+
+<div class="produk-item">
+<img src="Boneka lucu.png">
+<div>
+<h3>Boneka Lucu</h3>
+<p>Rp 80.000</p>
+<button onclick="tambahKeranjang('Boneka Lucu')">➕ Tambahkan</button>
+</div>
+</div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+<h2>Tentang Kami</h2>
+<p>
+Toko Belza menyediakan berbagai macam mainan anak yang berkualitas, aman, dan edukatif. 
+Kami percaya bahwa bermain adalah bagian penting dari tumbuh kembang anak.
+</p>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+<h2>Hubungi Kami</h2>
+<p><b>📱 WhatsApp : +62851-082-7377</b></p>
+<p><b>📷 Instagram : @empa_dzy</b></p>
+<p><b>📧 Email : belvamaulia@gmail.com</b></p>
+</section>
+
+<!-- PRODUK -->
+<section id="produk">
+<h2>Produk Kami</h2>
+
+<div class="produk-item"><img src="Robot mainan.png"><div><h3>Robot Mainan</h3><p>Rp 170.000</p><button onclick="tambahKeranjang('Robot Mainan')">➕ Tambahkan</button></div></div>
+<div class="produk-item"><img src="Mobil remote.png"><div><h3>Mobil Remote</h3><p>Rp 150.000</p><button onclick="tambahKeranjang('Mobil Remote')">➕ Tambahkan</button></div></div>
+<div class="produk-item"><img src="Puzzle edukasi.png"><div><h3>Puzzle Edukasi</h3><p>Rp 78.000</p><button onclick="tambahKeranjang('Puzzle Edukasi')">➕ Tambahkan</button></div></div>
+<div class="produk-item"><img src="Lego anak.png"><div><h3>Lego Anak</h3><p>Rp 55.000</p><button onclick="tambahKeranjang('Lego Anak')">➕ Tambahkan</button></div></div>
+<div class="produk-item"><img src="Boneka lucu.png"><div><h3>Boneka Lucu</h3><p>Rp 80.000</p><button onclick="tambahKeranjang('Boneka Lucu')">➕ Tambahkan</button></div></div>
+<div class="produk-item"><img src="Barbie cantik.png"><div><h3>Barbie Cantik</h3><p>Rp 100.000</p><button onclick="tambahKeranjang('Barbie Cantik')">➕ Tambahkan</button></div></div>
+</section>
+
+<!-- KERANJANG -->
+<section id="pesan">
+<h2>Keranjang Belanja</h2>
+
+<table>
+<thead>
+<tr>
+<th>Produk</th>
+<th>Harga</th>
+<th>Jumlah</th>
+<th>Total</th>
+<th>Aksi</th>
+</tr>
+</thead>
+<tbody id="dataPesanan"></tbody>
+</table>
+
+<h3>Total: Rp <span id="grandTotal">0</span></h3>
+
+<div class="payment">
+<h3>Data Pembeli</h3>
+<input type="text" id="namaPembeli" placeholder="Nama">
+<textarea id="alamatPembeli" placeholder="Alamat"></textarea>
+</div>
+
+<div class="payment">
+<h3>Metode Pembayaran</h3>
+
+<select id="metodeBayar">
+<option>Cash</option>
+<option>DANA</option>
+<option>GoPay</option>
+<option>Bank Transfer</option>
+</select>
+
+<br><br>
+
+<div class="logo-pembayaran">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg" alt="DANA">
+<img src="logo gopay.png" alt="GOPAY">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg" alt="BCA">
+</div>
+
+</div>
+
+<button onclick="checkout()">Bayar Sekarang</button>
+
+<div class="receipt" id="receipt"></div>
+</section>
+
+<footer>
+<p>© 2026 Belva Maulia Sopita</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
